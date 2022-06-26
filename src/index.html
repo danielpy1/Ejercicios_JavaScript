@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ejercicios Java</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <h3>Ejercicios java</h3><br>
+    <hr>
+    <h4>Ejercicio 1 , 2 , 3</h4>
+    <form>
+        <label>A</label>
+        <input id="a" required />
+        <br><br><label>B</label>
+        <input id="b" required/>
+        <br><br><label>C</label>
+        <input id="c" required/>
+        <br><br><button type="button" class="botones_calculadora" onclick="ejer1()">Positivo</button>
+        <br><br><button type="button" class="botones_calculadora" onclick="ejer2()">Negativo</button>
+    </form>
+    <p>
+        Resultado: <span id="resultado"></span>
+    </p>
+    <hr>
+    <h4>Ejercicio 4</h4>
+    <button type="button" class="botones_calculadora" onclick="ejer4()">Numero aletorio</button>
+    <input type="text" id="res" disabled/><br><br>
+    <hr>
+    <div id="calculadora">
+        <h4>Calculadora Infija</h4>
+        <table id="tabla" class="tab">
+            <tr>
+                <td class="td1"><button class="botones_calculadora" id="b7" onclick="b7()">7</button></td>
+                <td class="td1"><button class="botones_calculadora" id="b8" onclick="b8()">8</button></td>
+                <td class="td1"><button class="botones_calculadora" id="b9" onclick="b9()">9</button></td>
+            </tr>
+            <tr>
+                <td class="td1"><button class="botones_calculadora" id="b4" onclick="b4()">4</button></td>
+                <td class="td1"><button class="botones_calculadora" id="b5" onclick="b5()">5</button></td>
+                <td class="td1"><button class="botones_calculadora" id="b6" onclick="b6()">6</button></td>
+            </tr>
+            <tr>
+                <td class="td1"><button class="botones_calculadora" id="b1" onclick="b1()">1</button></td>
+                <td class="td1"><button class="botones_calculadora" id="b2" onclick="b2()">2</button></td>
+                <td class="td1"><button class="botones_calculadora" id="b3" onclick="b3()">3</button></td>
+            </tr>
+            <tr>
+                <td class="td1"><button class="botones_calculadora" disabled></button></td>
+                <td class="td1"><button class="botones_calculadora" id="b0()" onclick="b0()">0</button></td>
+                <td class="td1"><button class="botones_calculadora" disabled></button></td>
+            </tr>
+        </table><br><br>
+    </div>
+    <div id="numeros">
+        <h4>Numeros</h4>
+        <button class="botones_calculadora" id="AA" onclick="focusA()">A</button>
+        <button class="botones_calculadora" id="BB" onclick="focusB()">B</button>
+        <button class="botones_calculadora" id="breset" onclick="reset()">Reset</button>
+    </div>
+    <div id="operaciones">
+        <h4>Operaciones</h4>
+        <button class="botones_calculadora" id="suma" onclick="icono_suma()">+</button>
+        <button class="botones_calculadora" id="resta" onclick="icono_resta()">-</button>
+        <button class="botones_calculadora" id="multiplicacion" onclick="icono_multiplicacion()">*</button>
+        <button class="botones_calculadora" id="division" onclick="icono_division()">/</button>
+    </div><br>
+    <div id="tablero">
+        <h4>Tablero</h4>
+        <input type="text" class="ta" disabled placeholder="A" id="dA"/>
+        <input type="text" class="ta" disabled placeholder="Operacion" id="dO"/>
+        <input type="text" class="ta" disabled placeholder="B" id="dB"/>
+        <button type="button" class="botones_calculadora" id="calcular" onclick="calcular()">=</button>
+        <input type="text" class="ta" disabled placeholder="" id="resultado_definitivo"/>
+    </div><br>
+    <hr>
+    <div>
+        <h4>Dados</h4>
+        <div>
+            <table id="tabla2">
+                <tr>
+                    <td class="td2"><img src="img/none.png" id="img_1"></td>
+                    <td class="td2"><img src="img/none.png" id="img_2"></td>
+                    <td class="td2"><img src="img/none.png" id="img_3"></td>
+                    <td class="td2"><img src="img/none.png" id="img_4"></td>
+                    <td class="td2"><img src="img/none.png" id="img_5"></td>
+                </tr>
+            </table>
+        </div><br>
+        <button class="botones_calculadora" id="generar_dados">generar</button>
+        <button class="botones_calculadora" id="reset_dados">Reset</button>
+    </div><br><hr>
+    <div>
+        <h4>TA-TE-TI, la suerte para TI</h4>
+        <div id="caja_tateti">
+            <form onsubmit="return enviarMensaje()">
+                <label>Nombre jugador X </label>
+                <input type="text" id="nombre_x" required/><br><br>
+                <label>Nombre juagdor Y</label>
+                <input type="text" id="nombre_y" required/>
+                <button type="submit" onclick="verificar_jugar()" id="boton_jugar">Jugar</button>
+            </form>
+        </div>
+        <p>
+            TURNO DEL JUGADOR <input id="turno_de" class="ta" disabled/>
+        </p>
+        <table id="tabla3">
+            <tr>
+                <td class="td3"><img id="t00" src="img/nada.png" class="botones_tateti" onclick="pintadorGenerico('t00')"/></td>
+                <td class="td3"><img id="t01" src="img/nada.png" class="botones_tateti" onclick="pintadorGenerico('t01')"/></td>
+                <td class="td3"><img id="t02" src="img/nada.png" class="botones_tateti" onclick="pintadorGenerico('t02')"/></td>
+            </tr>
+            <tr>
+                <td class="td3"><img id="t10" src="img/nada.png" class="botones_tateti" onclick="pintadorGenerico('t10')"/></td>
+                <td class="td3"><img id="t11" src="img/nada.png" class="botones_tateti" onclick="pintadorGenerico('t11')"/></td>
+                <td class="td3"><img id="t12" src="img/nada.png" class="botones_tateti" onclick="pintadorGenerico('t12')"/></td>
+            </tr>
+            <tr>
+                <td class="td3"><img id="t20" src="img/nada.png" class="botones_tateti" onclick="pintadorGenerico('t20')"/></td>
+                <td class="td3"><img id="t21" src="img/nada.png" class="botones_tateti" onclick="pintadorGenerico('t21')"/></td>
+                <td class="td3"><img id="t22" src="img/nada.png" class="botones_tateti" onclick="pintadorGenerico('t22')"/></td>
+            </tr>
+        </table><br>
+        <div id="myModal" class="modalContainer">
+            <div class="modal-content">
+                <span class="close">X</span>
+                <h3>Jugador Ganador</h3>
+                <p id="nombre_ganador"></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="js-e002.js"></script>
+</html>
